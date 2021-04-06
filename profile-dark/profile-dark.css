@@ -1,0 +1,148 @@
+/*
+    -semantics
+    -structure
+    -colors
+        * color name ~ 100
+        * HEX3  #RGB (red,green,blue) #0G0 (none , green, none)
+            0..9A..F = 1024 (nuante de culori)
+        * HEX+A #RGBA
+        * HEX6  #RRGGBB = (nuante 16M+)
+        * HEX6+AA  #RRGGBBAA = (nuante 16M+)
+        * rgb(r,g,b) 0..255
+        * rgb(r,g,b,a)
+        * hsl(h,s,l) 
+
+        + 20%+- cross device (vendor, setting, ..)
+        + foreground / background MINIM contrast de 30%
+        + don't use STRONG colors on bg
+    -palettes
+    -units
+        * RELATIVE
+         % - percent (relative to parent size)
+         em - relative to CURRENT font size
+         rem - relative to ROOT font size
+    -dynamics
+    -effects
+    -scroll
+
+                ----------------------------------
+    slide left < | [AVATAR] <name>      |actions|   >   slide right
+                ----------------------------------
+*/
+
+.palette {
+    color: white;
+
+    color: #3C4959;
+    color: #29394d;
+    color: #D9BEA7;
+    color: #8C6954;
+    color: #734A3C;
+    color: #261713;
+}
+
+body {
+    background-color:  #3C4959;
+    color: white;
+    font-family: 'Roboto', sans-serif;;
+}
+
+/* PROFILE */
+.contacts {
+    width: 15em;
+}
+
+.contacts .avatar img {
+    height: 3em;
+}
+
+.contacts .avatar,
+.contacts .name {
+    display: inline-block;
+    vertical-align: middle;
+}   
+
+.contacts .actions {
+    float: right;
+    padding-top: 1em;
+}
+
+
+.contacts .actions a {
+    color: #29394d;
+}
+
+.contacts .item {
+    text-align: right;
+    overflow: hidden;
+    padding: .25em .5em;
+}
+
+.contacts .main,
+.contacts .actions-details {
+    border: 0.1px solid transparent;
+    width: 100%;
+
+    display: inline-block;
+    text-align: left;
+    vertical-align: middle;
+}
+
+
+.contacts .actions-details {
+    margin-right: -102%;
+}
+
+.contacts .actions-details a,
+.contacts .actions-details label {
+    padding: .5em 1em;
+    display: inline-block;
+    color: #7590b1;
+    cursor: pointer;
+}
+
+.contacts .actions-details a:last-of-type{
+    color: #29394d;
+    float: right;
+    font-size: 0.7em;
+    
+}
+
+.contacts .item > div {
+    transition: 0.5s;
+}
+
+.contacts .item:target > div {
+    transform: translateX(-104%);
+}
+
+.contacts .actions-details input[type="checkbox"] {
+    display: none;
+}
+
+.contacts .actions-details form {
+    display: none;
+    padding-left: 1em;
+}
+
+.contacts .actions-details input[type="checkbox"]:checked+ form {
+    display: block;
+}
+
+.contacts .actions-details>form button{
+    background-color: #734A3C;
+    color: white;
+    border: 0.5px solid #261713;
+    border-radius: 4em 2em;
+    padding: .5em 1em;
+    cursor: pointer;
+}
+
+.contacts .actions-details>form button:hover {
+    background-color: #8C6954;
+    color: black;
+}
+
+.contacts .actions-details>form textarea {
+   background-color: #D9BEA7;
+}
